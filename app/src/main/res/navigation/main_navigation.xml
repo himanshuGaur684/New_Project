@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/performanceFragment">
+
+    <fragment
+        android:id="@+id/performanceFragment"
+        android:name="com.example.newproject.ui.PerformanceFragment"
+        android:label="fragment_performance"
+        tools:layout="@layout/fragment_performance" >
+        <action
+            android:id="@+id/action_performanceFragment_to_zoneFragment"
+            app:destination="@id/zoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionFragment"
+        android:name="com.example.newproject.ui.RegionFragment"
+        android:label="fragment_region"
+        tools:layout="@layout/fragment_region" >
+        <action
+            android:id="@+id/action_regionFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+        <argument android:name="teritory"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/zoneFragment"
+        android:name="com.example.newproject.ui.ZoneFragment"
+        android:label="ZoneFragment" >
+        <action
+            android:id="@+id/action_zoneFragment_to_regionFragment"
+            app:destination="@id/regionFragment" />
+        <argument
+            android:name="teritory"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.example.newproject.ui.AreaFragment"
+        android:label="fragment_area"
+        tools:layout="@layout/fragment_area" >
+        <action
+            android:id="@+id/action_areaFragment_to_searchFragment2"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_areaFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="teritory"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.newproject.ui.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+</navigation>
